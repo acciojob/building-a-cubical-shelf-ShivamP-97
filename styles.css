@@ -3,7 +3,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    perspective: 800px;
     background-color: #f0f0f0;
 }
 
@@ -18,7 +17,7 @@ body {
     height: 200px;
     position: relative;
     transform-style: preserve-3d;
-    transform: rotateX(-20deg) rotateY(20deg);
+    box-sizing: content-box;
 }
 
 .cube .front,
@@ -41,36 +40,15 @@ body {
 .cube .right div,
 .cube .top div,
 .cube .bottom div {
-    position: absolute;
-    left: 0;
     width: 100%;
-    height: 33.3%;
-    border-top: 1px solid black;
+    height: 33.3333%;
+    border: 1px solid black;
+    box-sizing: border-box;
 }
 
-.cube .front .line-1 { top: 0; }
-.cube .front .line-2 { top: 66.66px; }
-.cube .front .line-3 { top: 133.33px; }
-
-.cube .back .line-1 { top: 0; }
-.cube .back .line-2 { top: 66.66px; }
-.cube .back .line-3 { top: 133.33px; }
-
-.cube .left .line-1 { top: 0; }
-.cube .left .line-2 { top: 66.66px; }
-.cube .left .line-3 { top: 133.33px; }
-
-.cube .right .line-1 { top: 0; }
-.cube .right .line-2 { top: 66.66px; }
-.cube .right .line-3 { top: 133.33px; }
-
-.cube .top .line-1 { top: 0; }
-.cube .top .line-2 { top: 66.66px; }
-.cube .top .line-3 { top: 133.33px; }
-
-.cube .bottom .line-1 { top: 0; }
-.cube .bottom .line-2 { top: 66.66px; }
-.cube .bottom .line-3 { top: 133.33px; }
+.cube .line-1 { top: 0; position: absolute; }
+.cube .line-2 { top: 33.3333%; position: absolute; }
+.cube .line-3 { top: 66.6666%; position: absolute; }
 
 .cube .front  { transform: translateZ(100px); }
 .cube .back   { transform: rotateY(180deg) translateZ(100px); }
